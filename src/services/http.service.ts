@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 const axiosConfig: AxiosRequestConfig = {
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: process.env.REACT_APP_API_BASE_URL,
   timeout: 15000,
 };
 

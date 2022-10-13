@@ -11,7 +11,11 @@ export const ProductCard = ({
       onClick={() => onclick(product._id)}
     >
       <div className="relative pb-60">
-        <img src="" className="absolute object-cover w-full h-full" alt="" />
+        <img
+          src={process.env.REACT_APP_IMAGE_BASE_URL + product.image}
+          className="absolute object-cover w-full h-full"
+          alt=""
+        />
       </div>
       <div className="pt-3">
         <h4>{product.name}</h4>

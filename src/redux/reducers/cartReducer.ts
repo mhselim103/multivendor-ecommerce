@@ -1,10 +1,3 @@
-// action -> add to cart
-// action type ??
-// add to cart -> state modify
-// return state
-
-// import { cartActionType } from "redux/actions/cartAction";
-// import { cartActionTypes } from "redux/types";
 import { cartActionType } from "../actions/cartAction";
 import { cartActionTypes } from "../types";
 

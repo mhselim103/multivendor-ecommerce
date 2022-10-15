@@ -8,7 +8,23 @@ const axiosConfig: AxiosRequestConfig = {
 const instance: AxiosInstance = axios.create(axiosConfig);
 
 // instance.get('/product').then(res => res.data)
-
+instance.interceptors.request.use(
+  function (config) {
+    // Do something before request is sent
+    return {
+      ...config,
+      headers: {
+        Authorization: JSON.parse(
+          JSON.parse(localStorage.getItem("persist:root") || "")?.auth
+        )?.data?.token,
+      },
+    };
+  },
+  function (error) {
+    // Do something with request error
+    return Promise.reject(error);
+  }
+);
 // {
 //   config: {},
 //   data: {
